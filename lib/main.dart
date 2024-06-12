@@ -1,3 +1,4 @@
+import 'package:doctor_app_test/config/dependency_injection/dp.dart';
 import 'package:doctor_app_test/core/app_routes.dart';
 import 'package:doctor_app_test/features/dashboard/dashboard_provider/dashboard_provider.dart';
 import 'package:doctor_app_test/features/dashboard/presentation/screens/dashboard_screen.dart';
@@ -12,10 +13,12 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => SplashProvider()) ,
-    ChangeNotifierProvider(create: (context) => LoginProvider()) ,
+    ChangeNotifierProvider(create: (context) => LoginProvider(loginImplRepo: Dp.getIt())) ,
     ChangeNotifierProvider(create: (context) => DashBoardProvider())
   ] ,
   child: const MyApp(),));
+
+  Dp.setUp();
 }
 
 class MyApp extends StatelessWidget {
