@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 color: AppColors.whiteColor,
               ),
               Center(child: SvgPicture.asset(AppImages.backLogo)) ,
-              Center(child: Image(image: AssetImage(AppImages.logoAppName) ,
+              Center(child: Image(image: const AssetImage(AppImages.logoAppName) ,
               width: 270.w,
               height: 72.h,
               fit: BoxFit.fill,),)
