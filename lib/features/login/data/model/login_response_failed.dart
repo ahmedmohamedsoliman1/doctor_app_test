@@ -1,6 +1,6 @@
 class LoginResponseError {
   String? message;
-  List<String>? data;
+  dynamic data;
   bool? status;
   int? code;
 
@@ -8,7 +8,7 @@ class LoginResponseError {
 
   LoginResponseError.fromJson(Map<String, dynamic> json) {
     message = json['message'];
-    data = json['data'].cast<String>();
+    data = json['data'];
     status = json['status'];
     code = json['code'];
   }

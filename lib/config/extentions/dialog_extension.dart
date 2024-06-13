@@ -7,9 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 extension DialogExt on BuildContext {
 
-  Future <void> dialog (BuildContext context , String message) async{
+  Future <void> dialog (BuildContext context , String message , IconData icon , Color color) async{
     return await showDialog(context: context, builder: (context) {
-      Future.delayed(const Duration(seconds: 1), () {
+      Future.delayed(const Duration(seconds: 2), () {
        context.pop(context);
       });
       return AlertDialog(
@@ -18,11 +18,11 @@ extension DialogExt on BuildContext {
         ),
         content: SizedBox(
           width: 200.w,
-          height: 120.h,
+          height: 150.h,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             const Icon(Icons.person , size: 60, color: AppColors.primaryColor,),
+             Icon(icon, size: 60, color: color,),
               SizedBox(height: 15.h,),
               customText(
                   text: message,
